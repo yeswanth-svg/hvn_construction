@@ -1,0 +1,61 @@
+1)project_info
+  project_name
+  lp_no
+  rera_no
+  location
+  survey_no
+  extent(Acres)
+
+2)plot_level_information
+  total_plots
+  mortgaged_plots
+  developer_plots
+  land_owner_plots
+  registered_plots
+  booked_plots
+  available_plots
+
+3)each_plot_information-(Acess-only admin)
+  plot_no
+  ownership
+  name
+  geo_coordinates_n
+  geo_coordinates_e
+  plot_area_sq_yds
+  plot_area_cents
+  facing
+  size_east
+  size_west
+  size_north
+  size_south
+  plot_availability_for_sale
+
+4)coustmer_detials
+  plot_no
+  customer_name
+  phone_number
+  pan_no
+  aadhaar_no
+  address
+  market_value_per_sqyd
+  price_per_sqyd
+  price_per_cent (price_per_sqyd * 48)
+  total_plot_value (plot_area_sq_yds * price_per_sqyd)
+  total_market_value (market_value_per_sqyd * plot_area_sq_yds)
+  status enum Booked / Registered
+
+5)payment_details
+  customer_id
+  payment_date
+  amount
+  mode_of_payment
+  details
+  bank_name
+  attachments
+  remarks
+
+6)company_accounts
+  bank_name
+  account_name
+  account_no
+  ifsc_code
