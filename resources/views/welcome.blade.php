@@ -4,77 +4,9 @@
 @section('content')
 
 <style>
-    section {
-        padding: 40px 0;
-    }
-
-    .single-property {
-        margin-top: 30px;
-    }
-
-    .single-property .description-section .desc-box {
-        box-shadow: 3.346px 3.716px 22.5px rgba(0, 0, 0, 0.07);
-    }
-
-    .single-property .description-section .menu-top {
-        background-color: #fff;
-        border-bottom: 1px solid #d2d2d2;
-        padding: 15px 0;
-    }
-
-    li {
-        display: inline-block;
-        font-size: 14px;
-    }
-
-    a {
-        cursor: pointer;
-    }
-
-    a {
-        transition: 0.5s ease;
-        text-decoration: none;
-    }
-
-    .single-property .description-section .menu-top li a {
-        padding: 15px 20px;
-        text-transform: uppercase;
-        font-weight: 600;
-        color: #1c2d3a;
-    }
-
-    .single-property .description-section .menu-top.sticky {
-        position: fixed;
-        z-index: 2;
-        top: 0;
-        left: 0;
-        width: 100%;
-        box-shadow: 1px 3px 20px 0 rgba(0, 0, 0, 0.1);
-        margin-top: 0;
-        padding: 16px 0;
-        animation: smoothScroll 1s forwards;
-    }
-
-    .single-property .description-section .menu-top {
-        background-color: #fff;
-        border-bottom: 1px solid #d2d2d2;
-        padding: 15px 0;
-    }
-
-    .single-property .description-section .menu-top li.active a {
-        color: green !important;
-        border-bottom: 2px solid green !important;
-        transition: 0.5s;
-    }
-
-    .title-svg {
-        fill: var(--theme-default);
-        stroke: var(--theme-default);
-        height: 85px;
-        width: 85px;
-        margin-bottom: -85px;
-    }
+   
 </style>
+
 
 <div class="hero">
     <div class="hero-slide">
@@ -134,7 +66,7 @@
                 <!-- online plot availability-->
                 <div id="onlineplotavaiability" data-aos="fade-up">
                     <img src="{{ asset('property/images/hero_bg_1.jpg') }}" alt="Hero Background"
-                        style="width: 100%; height: auto; min-height: 300px; margin-top: 20px; border: 2px solid black;">
+                        style="width: 100%; height: 300px; min-height: 300px; margin-top: 20px; border: 2px solid black;">
                 </div>
                 <!-- Project info -->
                 <section id="projectinfo" style="padding: 32px; text-align: center" data-aos="fade-up">
@@ -166,7 +98,8 @@
                                 <div class="m-2 bg-brandcolor-light">
                                     <div class="pricing-box">
                                         <div class="pricing-details">
-                                            <h3 class="text-truncate">Residential</h3>
+                                            <h3 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                                Residential </h3>
                                         </div>
                                         <ul>
                                             <li>A - 100% Spot Payment</li>
@@ -184,11 +117,12 @@
                                 <div class="m-2 bg-brandcolor-light">
                                     <div class="pricing-box">
                                         <div class="pricing-details">
-                                            <h3 class="text-truncate">Residential</h3>
+                                            <h3 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                                Residential </h3>
                                         </div>
                                         <ul>
                                             <li>
-                                                3 Months Option - 25% within a week & Balance 75% on or
+                                                3 Months Option - 25% within a week &amp; Balance 75% on or
                                                 before 3 months
                                             </li>
                                         </ul>

@@ -13625,3 +13625,358 @@ nav[aria-label="breadcrumb"] li:before {
     background: #00204a;
     color: #fff;
 }
+
+/* //style for the bbg  design */
+section {
+    padding: 40px 0;
+}
+
+.single-property {
+    margin-top: 30px;
+}
+
+.single-property .description-section .desc-box {
+    box-shadow: 3.346px 3.716px 22.5px rgba(0, 0, 0, 0.07);
+}
+
+.single-property .description-section .menu-top {
+    background-color: #fff;
+    border-bottom: 1px solid #d2d2d2;
+    padding: 15px 0;
+}
+
+li {
+    display: inline-block;
+    font-size: 14px;
+}
+
+a {
+    cursor: pointer;
+}
+
+a {
+    transition: 0.5s ease;
+    text-decoration: none;
+}
+
+.single-property .description-section .menu-top li a {
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #1c2d3a;
+}
+
+.single-property .description-section .menu-top.sticky {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 1px 3px 20px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 0;
+    padding: 16px 0;
+    animation: smoothScroll 1s forwards;
+}
+
+.single-property .description-section .menu-top {
+    background-color: #fff;
+    border-bottom: 1px solid #d2d2d2;
+    padding: 15px 0;
+}
+
+.single-property .description-section .menu-top li.active a {
+    color: green !important;
+    border-bottom: 2px solid green !important;
+    transition: 0.5s;
+}
+
+.title-svg {
+    fill: var(--theme-default);
+    stroke: var(--theme-default);
+    height: 85px;
+    width: 85px;
+    margin-bottom: -85px;
+}
+
+@media (max-width: 767px) {
+    .single-property .description-section .menu-top li.active a {
+        border-bottom: none;
+    }
+}
+.bg-brandcolor-light {
+    background-color: rgba(163, 207, 187, 0.2);
+}
+
+.pricing-section .pricing-box {
+    box-shadow: 0 0 27px rgba(0, 0, 0, 0.07);
+    padding: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.pricing-section .pricing-box:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: green;
+    transition: width 0.5s;
+    bottom: 0;
+    left: 0;
+}
+
+.pricing-section .pricing-box h3,
+.pricing-section .pricing-box h4 {
+    color: #586167;
+}
+
+.pricing-section .pricing-box .pricing-details img {
+    margin: 0 auto;
+}
+
+.pricing-section .pricing-box .pricing-details .pricing-svg {
+    width: 50px;
+    height: 50px;
+}
+
+.pricing-section .pricing-box .pricing-details .pricing-icon {
+    position: relative;
+}
+
+.pricing-section .pricing-box .pricing-details .pricing-icon .pricing-svg {
+    fill: green;
+}
+
+.pricing-section .pricing-box .pricing-details .pricing-icon:after {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    opacity: 0.2;
+    bottom: -7px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    transform: translateX(11px);
+    background-color: green;
+}
+
+.pricing-section .pricing-box .pricing-details h3 {
+    margin-top: 26px;
+    font-weight: 700;
+}
+
+.pricing-section .pricing-box .pricing-details p {
+    line-height: 1.75;
+    color: rgba(88, 97, 103, 0.7);
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.pricing-section .pricing-box ul {
+    margin: 30px 0;
+}
+
+.pricing-section .pricing-box ul li {
+    display: block;
+    font-family: Avenir;
+    color: rgba(88, 97, 103, 0.5);
+    font-size: 15px;
+    text-transform: lowercase;
+}
+
+.pricing-section .pricing-box ul li + li {
+    margin-top: 10px;
+}
+
+.pricing-section .pricing-box .price {
+    margin-bottom: -5px;
+}
+
+.pricing-section .pricing-box .price h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: calc(22px + 8 * (100vw - 320px) / 1600);
+    font-weight: 700;
+}
+
+.pricing-section .pricing-box .price .label {
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.5s;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.pricing-section .pricing-box .price .label.label-light:before {
+    opacity: 0.15;
+    transition: 0.5s;
+    background-color: green;
+}
+
+.pricing-section .pricing-box .price .light-text {
+    color: rgba(59, 66, 73, 0.3);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.pricing-section .pricing-box:hover:after {
+    transition: width 0.5s;
+    width: 100%;
+}
+
+.pricing-section .pricing-box:hover .price .label-light {
+    background-color: green !important;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.pricing-section .pricing-box:hover .price .label-light:before {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.pricing-section .pricing-box:hover .price .label-light:after {
+    box-shadow: 0 10px 12.5px green;
+    opacity: 0.22;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.pricing-section .pricing-box1 {
+    box-shadow: 0 0 27px rgba(0, 0, 0, 0.07);
+    padding: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.pricing-section .pricing-box1:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 3px;
+    background-color: var(--theme-default);
+    transition: width 0.5s;
+    bottom: 0;
+    left: 0;
+}
+
+.pricing-section .pricing-box1 h3,
+.pricing-section .pricing-box1 h4 {
+    color: #586167;
+}
+
+.pricing-section .pricing-box1 .pricing-details img {
+    margin: 0 auto;
+}
+
+.pricing-section .pricing-box1 .pricing-details .pricing-svg {
+    width: 50px;
+    height: 50px;
+}
+
+.pricing-section .pricing-box1 .pricing-details .pricing-icon {
+    position: relative;
+}
+
+.pricing-section .pricing-box1 .pricing-details .pricing-icon .pricing-svg {
+    fill: var(--theme-default);
+}
+
+.pricing-section .pricing-box1 .pricing-details .pricing-icon:after {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    opacity: 0.2;
+    bottom: -7px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    transform: translateX(11px);
+    background-color: var(--theme-default);
+}
+
+.pricing-section .pricing-box1 .pricing-details h3 {
+    margin-top: 26px;
+    font-weight: 700;
+}
+
+.pricing-section .pricing-box1 .pricing-details p {
+    line-height: 1.75;
+    color: rgba(88, 97, 103, 0.7);
+    margin-bottom: 0;
+    font-size: 15px;
+}
+
+.pricing-section .pricing-box1 ul {
+    margin: 30px 0;
+}
+
+.pricing-section .pricing-box1 ul li {
+    display: block;
+    font-family: Avenir;
+    color: rgba(88, 97, 103, 0.5);
+    font-size: 15px;
+    text-transform: lowercase;
+}
+
+.pricing-section .pricing-box1 ul li + li {
+    margin-top: 10px;
+}
+
+.pricing-section .pricing-box1 .price {
+    margin-bottom: -5px;
+}
+
+.pricing-section .pricing-box1 .price h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: calc(22px + 8 * (100vw - 320px) / 1600);
+    font-weight: 700;
+}
+
+.pricing-section .pricing-box1 .price .label {
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.5s;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.pricing-section .pricing-box1 .price .label.label-light:before {
+    opacity: 0.15;
+    transition: 0.5s;
+    background-color: var(--theme-default);
+}
+
+.pricing-section .pricing-box1 .price .light-text {
+    color: rgba(59, 66, 73, 0.3);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.pricing-section .pricing-box1:hover:after {
+    transition: width 0.5s;
+    width: 100%;
+}
+
+.pricing-section .pricing-box1:hover .price .label-light {
+    background-color: var(--theme-default);
+    color: #fff;
+    transition: 0.5s;
+}
+
+.pricing-section .pricing-box1:hover .price .label-light:before {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.pricing-section .pricing-box1:hover .price .label-light:after {
+    box-shadow: 0 10px 12.5px var(--theme-default);
+    opacity: 0.22;
+    transition: 0.5s;
+    z-index: -1;
+}
