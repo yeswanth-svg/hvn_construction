@@ -13,6 +13,26 @@ class HomeController extends Controller
         return view('welcome');
     }
 
+    public function about_us()
+    {
+        return view('about');
+    }
+
+    public function services()
+    {
+        return view('services');
+    }
+
+    public function properties()
+    {
+        return view('properties');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
     // Show the dashboard page
     public function dashboard()
     {

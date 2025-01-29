@@ -15,11 +15,16 @@ use App\Http\Controllers\Admin\EPIController;
 
 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about-us', [HomeController::class, 'about_us'])->name('about-us');
+Route::get('/services', [HomeController::class, 'services'])->name('services');
+Route::get('/properties', [HomeController::class, 'properties'])->name('properties');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

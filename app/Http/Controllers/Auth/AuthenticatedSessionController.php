@@ -38,7 +38,7 @@ class AuthenticatedSessionController extends Controller
         }
 
         // Default redirection for other roles or unauthenticated users
-        return redirect()->intended(route('dashboard', absolute: false));
+        return redirect()->intended(route('home', absolute: false));
     }
 
 
