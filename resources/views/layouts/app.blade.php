@@ -29,6 +29,20 @@
     <link rel="stylesheet" href="{{asset('property/css/style.css')}}" />
 
     <title>@yield('title', 'Realestate')</title>
+
+    <style>
+        #form {
+            padding: 5px 20px;
+            display: block;
+            font-size: 14px;
+            text-transform: none;
+            letter-spacing: normal;
+            -webkit-transition: 0s all;
+            -o-transition: 0s all;
+            transition: 0s all;
+            color: #000;
+        }
+    </style>
 </head>
 
 <body>
@@ -64,6 +78,18 @@
                                 <li class="{{request()->is('dashboard') ? 'active' : ''}}"><a
                                         href="{{route('dashboard')}}">Dashboard
                                     </a></li>
+                                <li class="has-children">
+                                    <a href="">{{ Auth::user()->name }}</a>
+                                    <ul class="dropdown">
+                                        <li><a href="{{route('profile.edit')}}">{{ __('Profile') }}</a></li>
+                                        <li>
+                                            <form method="POST" action="{{ route('logout') }}" id="form">
+                                                @csrf
+                                                {{ __('Log Out') }}
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
 
                             @else
                                 <li class="{{request()->is('login') ? 'active' : ''}}"><a href="{{route('login')}}">Login
