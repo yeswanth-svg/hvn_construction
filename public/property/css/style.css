@@ -13856,7 +13856,7 @@ a {
     content: "";
     width: 0;
     height: 3px;
-    background-color: var(--theme-default);
+    background-color: green;
     transition: width 0.5s;
     bottom: 0;
     left: 0;
@@ -13881,7 +13881,7 @@ a {
 }
 
 .pricing-section .pricing-box1 .pricing-details .pricing-icon .pricing-svg {
-    fill: var(--theme-default);
+    fill: green;
 }
 
 .pricing-section .pricing-box1 .pricing-details .pricing-icon:after {
@@ -13896,7 +13896,7 @@ a {
     left: 0;
     margin: 0 auto;
     transform: translateX(11px);
-    background-color: var(--theme-default);
+    background-color: green;
 }
 
 .pricing-section .pricing-box1 .pricing-details h3 {
@@ -13949,7 +13949,7 @@ a {
 .pricing-section .pricing-box1 .price .label.label-light:before {
     opacity: 0.15;
     transition: 0.5s;
-    background-color: var(--theme-default);
+    background-color: green;
 }
 
 .pricing-section .pricing-box1 .price .light-text {
@@ -13964,7 +13964,7 @@ a {
 }
 
 .pricing-section .pricing-box1:hover .price .label-light {
-    background-color: var(--theme-default);
+    background-color: green;
     color: #fff;
     transition: 0.5s;
 }
@@ -13975,7 +13975,7 @@ a {
 }
 
 .pricing-section .pricing-box1:hover .price .label-light:after {
-    box-shadow: 0 10px 12.5px var(--theme-default);
+    box-shadow: 0 10px 12.5px green;
     opacity: 0.22;
     transition: 0.5s;
     z-index: -1;
