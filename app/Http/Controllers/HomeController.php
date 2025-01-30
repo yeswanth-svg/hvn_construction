@@ -33,6 +33,11 @@ class HomeController extends Controller
         return view('contact');
     }
 
+    public function gallery()
+    {
+        return view('gallery');
+    }
+
     // Show the dashboard page
     public function dashboard()
     {

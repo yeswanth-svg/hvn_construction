@@ -2,9 +2,48 @@
 @section('title', 'Realestate')
 
 @section('content')
-
 <style>
-   
+    .portfolio-section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 images per row */
+        gap: 20px;
+        /* Space between images */
+        justify-content: center;
+    }
+
+    .grid-item {
+        padding: 10px;
+    }
+
+    .portfolio-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: block;
+        width: 100%;
+        height: 250px;
+        /* Adjust height */
+        border-radius: 10px;
+        /* Small curve on borders */
+        border: 2px solid #ddd;
+        /* Light border */
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        /* Slight shadow */
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .portfolio-image:hover {
+        transform: scale(1.05);
+        /* Slight zoom on hover */
+    }
+
+    .title-svg {
+        height: 85px;
+        width: 90px;
+        margin-bottom: -55px;
+    }
 </style>
 
 
@@ -68,14 +107,17 @@
                     <img src="{{ asset('property/images/hero_bg_1.jpg') }}" alt="Hero Background"
                         style="width: 100%; height: 300px; min-height: 300px; margin-top: 20px; border: 2px solid black;">
                 </div>
+
+                <br>
                 <!-- Project info -->
                 <section id="projectinfo" style="padding: 32px; text-align: center" data-aos="fade-up">
                     <div class="container">
-                        <div class="title-2 m-4">
-                            <h2>SATHYAM GARDENS</h2>
-                            <p class="font-roboto">SALUR -PARVATHIPURAM</p>
+                        <div class="row">
+                            <div class="title-2 mb-5 text-center d-flex flex-column align-items-center">
+                                <h2 class="font-roboto">SATHYAM GARDENS</h2>
+                                <p class="font-roboto">SALUR -PARVATHIPURAM</p>
+                            </div>
                         </div>
-                    </div>
                 </section>
 
                 <!-- Payment options -->
@@ -85,10 +127,10 @@
                             <div class="col text-center">
                                 <div class="title-2 mb-5">
                                     <h2 class="font-roboto">Payment Options</h2>
-                                    <svg class="title-svg">
-                                        <use xlink:href="/assets/svg/icons.svg#title-line"></use>
-                                    </svg>
+                                    <img src="{{ asset('property/images/titlesvg1.png') }}" alt="Title SVG"
+                                        class="title-svg">
                                 </div>
+
                             </div>
                         </div>
 
@@ -141,324 +183,331 @@
                 <section class="pricing-section slick-between slick-shadow" id="amenities" style="padding: 32px">
                     <div class="container">
                         <div class="row">
-                            <div class="col text-center">
-                                <div class="title-2 mb-5">
-                                    <h2 class="font-roboto">Amenities</h2>
-                                    <svg class="title-svg">
-                                        <use xlink:href="/assets/svg/icons.svg#title-line"></use>
-                                    </svg>
+                            <div class="title-2 mb-5 text-center d-flex flex-column align-items-center">
+                                <h2 class="font-roboto">Amenities</h2>
+                                <img src="{{ asset('property/images/titlesvg1.png') }}" alt="Title SVG"
+                                    class="title-svg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3 mb-2">
+                            <div class="m-2">
+                                <div class="pricing-box1 bg-light text-center p-3">
+                                    <img src="{{asset('property/amenities/24 x7 Security.png')}}" height="45px"
+                                        alt="24x7 Security" />
+                                    <div class="pricing-details mt-2">24x7 Security</div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-sm-3 mb-2">
-                                <div class="m-2">
-                                    <div class="pricing-box1 bg-light text-center p-3">
-                                        <img src="{{asset('amenities/24 x7 Security.png')}}" height="45px"
-                                            alt="24x7 Security" />
-                                        <div class="pricing-details mt-2">24x7 Security</div>
+                        <div class="col-sm-3 mb-2">
+                            <div class="m-2">
+                                <div class="pricing-box1 bg-light text-center p-3">
+                                    <img src="{{asset('property/amenities/Designer Street Lighting.png')}}"
+                                        height="45px" alt="Designer Street Lighting" />
+                                    <div class="pricing-details mt-2">
+                                        Designer Street Lighting
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-sm-3 mb-2">
-                                <div class="m-2">
-                                    <div class="pricing-box1 bg-light text-center p-3">
-                                        <img src="{{asset('amenities/Designer Street Lighting.png')}}" height="45px"
-                                            alt="Designer Street Lighting" />
-                                        <div class="pricing-details mt-2">
-                                            Designer Street Lighting
-                                        </div>
+                        <div class="col-sm-3 mb-2">
+                            <div class="m-2">
+                                <div class="pricing-box1 bg-light text-center p-3">
+                                    <img src="{{asset('property/amenities/Exclusive Guarded Community.png')}}"
+                                        height="45px" alt="Exclusive Guarded Community" />
+                                    <div class="pricing-details mt-2">
+                                        Exclusive Guarded Community
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-sm-3 mb-2">
-                                <div class="m-2">
-                                    <div class="pricing-box1 bg-light text-center p-3">
-                                        <img src="{{asset('amenities/Exclusive Guarded Community.png')}}" height="45px"
-                                            alt="Exclusive Guarded Community" />
-                                        <div class="pricing-details mt-2">
-                                            Exclusive Guarded Community
-                                        </div>
+                        <div class="col-sm-3 mb-2">
+                            <div class="m-2">
+                                <div class="pricing-box1 bg-light text-center p-3">
+                                    <img src="{{asset('property/amenities/Parks& Gardens Open Spaces.png')}}"
+                                        height="45px" alt="Parks & Gardens Open Spaces" />
+                                    <div class="pricing-details mt-2">
+                                        Parks & Gardens Open Spaces
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-sm-3 mb-2">
-                                <div class="m-2">
-                                    <div class="pricing-box1 bg-light text-center p-3">
-                                        <img src="{{asset('amenities/Parks& Gardens Open Spaces.png')}}" height="45px"
-                                            alt="Parks & Gardens Open Spaces" />
-                                        <div class="pricing-details mt-2">
-                                            Parks & Gardens Open Spaces
-                                        </div>
+                        <div class="col-sm-3 mb-2">
+                            <div class="m-2">
+                                <div class="pricing-box1 bg-light text-center p-3">
+                                    <img src="{{asset('property/amenities/Rain Water Harvesting.png')}}" height="45px"
+                                        alt="Rain Water Harvesting" />
+                                    <div class="pricing-details mt-2">Rain Water Harvesting</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3 mb-2">
+                            <div class="m-2">
+                                <div class="pricing-box1 bg-light text-center p-3">
+                                    <img src="{{asset('property/amenities/Underground Drainage System.png')}}"
+                                        height="45px" alt="Underground Drainage System" />
+                                    <div class="pricing-details mt-2">
+                                        Underground Drainage System
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-sm-3 mb-2">
-                                <div class="m-2">
-                                    <div class="pricing-box1 bg-light text-center p-3">
-                                        <img src="{{asset('amenities/Rain Water Harvesting.png')}}" height="45px"
-                                            alt="Rain Water Harvesting" />
-                                        <div class="pricing-details mt-2">Rain Water Harvesting</div>
+                        <div class="col-sm-3 mb-2">
+                            <div class="m-2">
+                                <div class="pricing-box1 bg-light text-center p-3">
+                                    <img src="{{asset('property/amenities/Underground Water Supply.png')}}"
+                                        height="45px" alt="Underground Water Supply" />
+                                    <div class="pricing-details mt-2">
+                                        Underground Water Supply
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="col-sm-3 mb-2">
-                                <div class="m-2">
-                                    <div class="pricing-box1 bg-light text-center p-3">
-                                        <img src="{{asset('amenities/Underground Drainage System.png')}}" height="45px"
-                                            alt="Underground Drainage System" />
-                                        <div class="pricing-details mt-2">
-                                            Underground Drainage System
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-3 mb-2">
-                                <div class="m-2">
-                                    <div class="pricing-box1 bg-light text-center p-3">
-                                        <img src="{{asset('amenities/Underground Water Supply.png')}}" height="45px"
-                                            alt="Underground Water Supply" />
-                                        <div class="pricing-details mt-2">
-                                            Underground Water Supply
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-3 mb-2">
-                                <div class="m-2">
-                                    <div class="pricing-box1 bg-light text-center p-3">
-                                        <img src="{{asset('amenities/Wide Spacious Black Top Roads.png')}}"
-                                            height="45px" alt="Wide Spacious Black Top Roads" />
-                                        <div class="pricing-details mt-2">
-                                            Wide Spacious Black Top Roads
-                                        </div>
+                        <div class="col-sm-3 mb-2">
+                            <div class="m-2">
+                                <div class="pricing-box1 bg-light text-center p-3">
+                                    <img src="{{asset('property/amenities/Wide Spacious Black Top Roads.png')}}"
+                                        height="45px" alt="Wide Spacious Black Top Roads" />
+                                    <div class="pricing-details mt-2">
+                                        Wide Spacious Black Top Roads
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
+            </div>
+</section>
 
 
-                <!-- Project Development -->
-                <section class="about-main ratio_36 bg-brandcolor-light" id="projectdevelopment" style="padding: 32px">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col text-center">
-                                <div class="title-2 mb-5">
-                                    <h2 class="font-roboto">Project Development</h2>
-                                    <svg class="title-svg">
-                                        <use xlink:href="/assets/svg/icons.svg#title-line"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+<!-- Project Development -->
+<section class="about-main ratio_36 bg-brandcolor-light" id="projectdevelopment" style="padding: 32px">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="title-2 mb-5">
+                    <h2 class="font-roboto">Project Development</h2>
+                    <img src="{{ asset('property/images/titlesvg1.png') }}" alt="Title SVG" class="title-svg">
+                </div>
+            </div>
+        </div>
 
-                        <div class="portfolio-section zoom-gallery-multiple gy-md-4 gy-3 ratio_square row">
-                            <div class="slick-slider blog-1">
-                                <div class="slick-list">
-                                    <div class="slick-track">
-                                        <!-- Image Item 1 -->
-                                        <div class="slick-slide">
-                                            <div class="grid-item col-sm-6 col-lg-3">
-                                                <div class="grid-box">
-                                                    <div class="overlay">
-                                                        <div class="portfolio-image">
-                                                            <a class="bg-size" style="
-                                background-image: url('/assets/img/3_133572928263527505.jpeg');
-                              "></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Image Item 2 -->
-                                        <div class="slick-slide">
-                                            <div class="grid-item col-sm-6 col-lg-3">
-                                                <div class="grid-box">
-                                                    <div class="overlay">
-                                                        <div class="portfolio-image">
-                                                            <a class="bg-size" style="
-                                background-image: url('/assets/img/2_133572928263931814.jpeg');
-                              "></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- Image Item 3 -->
-                                        <div class="slick-slide">
-                                            <div class="grid-item col-sm-6 col-lg-3">
-                                                <div class="grid-box">
-                                                    <div class="overlay">
-                                                        <div class="portfolio-image">
-                                                            <a class="bg-size" style="
-                                background-image: url('/assets/img/1_133572928263972948.jpeg');
-                              "></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row g-3">
+            <!-- Image Items -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    onclick="showImage('{{ asset('property/projectdevelopment/1.jpeg') }}')">
+                    <div class="portfolio-image"
+                        style="background-image: url('{{ asset('property/projectdevelopment/1.jpeg') }}');">
                     </div>
-                </section>
+                </a>
+            </div>
 
-                <!-- Location Highlights -->
-                <section class="about-main ratio_36 bg-brandcolor-light" id="locationhighlights" style="padding: 32px">
-                    <div class="container">
-                        <div class="title-2 mb-5">
-                            <h2 class="font-roboto" style="color: rgb(210, 158, 42)">
-                                Location Highlights
-                            </h2>
-                            <svg class="title-svg">
-                                <use xlink:href="/assets/svg/icons.svg#title-line"></use>
-                            </svg>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="user-about">
-                                    <div class="row">
-                                        <div class="d-flex col">
-                                            <div class="col-xl-6 col-lg-6">
-                                                <div class="about-content">
-                                                    <!-- Project Location Highlights -->
-                                                    <div class="mb-3">
-                                                        <h4 class="primarycolor-text">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="green" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <path
-                                                                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z">
-                                                                </path>
-                                                                <circle cx="12" cy="10" r="3"></circle>
-                                                            </svg>
-                                                            Project Location Highlights
-                                                        </h4>
-                                                        <ul class="font-roboto"
-                                                            style="margin-left: 24px; font-size: 16px">
-                                                            <li>
-                                                                Near to Green Field International Airport and
-                                                                Aviation Hub.
-                                                            </li>
-                                                            <li>
-                                                                Equidistant to the three districts of Vizag,
-                                                                Vijayanagaram, and Srikakulam.
-                                                            </li>
-                                                            <li>
-                                                                Very close to NH-16 (Chennai to Kolkata) ensuring
-                                                                excellent connectivity.
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <!-- Strategic Infrastructure -->
-                                                    <div class="mb-3">
-                                                        <h4 class="primarycolor-text">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="green" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <line x1="4" y1="21" x2="4" y2="14"></line>
-                                                                <line x1="4" y1="10" x2="4" y2="3"></line>
-                                                                <line x1="12" y1="21" x2="12" y2="12"></line>
-                                                                <line x1="12" y1="8" x2="12" y2="3"></line>
-                                                                <line x1="20" y1="21" x2="20" y2="16"></line>
-                                                                <line x1="20" y1="12" x2="20" y2="3"></line>
-                                                            </svg>
-                                                            Strategic Infrastructure
-                                                        </h4>
-                                                        <ul class="font-roboto"
-                                                            style="margin-left: 24px; font-size: 16px">
-                                                            <li>
-                                                                Close to the Madhurawada IT Corridor enhancing
-                                                                access to technological and business hubs.
-                                                            </li>
-                                                            <li>
-                                                                Near the Pydibhimavaram Industrial Corridor
-                                                                providing strategic advantages for businesses.
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <!-- Global Attractions -->
-                                                    <div class="mb-3">
-                                                        <h4 class="primarycolor-text">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                                height="24" viewBox="0 0 24 24" fill="none"
-                                                                stroke="green" stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round">
-                                                                <circle cx="12" cy="12" r="10"></circle>
-                                                            </svg>
-                                                            Global Attractions
-                                                        </h4>
-                                                        <ul class="font-roboto"
-                                                            style="margin-left: 24px; font-size: 16px">
-                                                            <li>
-                                                                Near the prestigious coastal corridor tourism hub
-                                                                and SEZs making it an attractive destination.
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Image Section -->
-                                            <div class="col-xl-6 col-lg-6">
-                                                <div class="portfolio-section zoom-gallery-multiple gy-md-4 gy-3 ratio_square row"
-                                                    style="justify-content: center; align-items: flex-start">
-                                                    <div class="grid-item col-sm-6 col-lg-4">
-                                                        <a>
-                                                            <img src="/assets/img/proposed_133572918151671037.jpg"
-                                                                style="width: 220px; height: 300px" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-12 col-md-6 col-lg-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    onclick="showImage('{{ asset('property/projectdevelopment/2.jpeg') }}')">
+                    <div class="portfolio-image"
+                        style="background-image: url('{{ asset('property/projectdevelopment/2.jpeg') }}');">
                     </div>
-                </section>
-                <section id="downloadbrochure"></section>
-                <section></section>
-                <!-- Downloadbrochure section -->
-                <section style="display: flex; justify-content: center">
-                    <div class="home-search-6 m-5">
-                        <button type="button" class="btn btn-secondary" style="width: 100%">
-                            Download Project Layout
-                        </button>
-                        <div class="vertical-search">
-                            <div></div>
-                        </div>
+                </a>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    onclick="showImage('{{ asset('property/projectdevelopment/3.jpeg') }}')">
+                    <div class="portfolio-image"
+                        style="background-image: url('{{ asset('property/projectdevelopment/3.jpeg') }}');">
                     </div>
-                </section>
+                </a>
+            </div>
 
+            <div class="col-12 col-md-6 col-lg-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    onclick="showImage('{{ asset('property/projectdevelopment/4.jpeg') }}')">
+                    <div class="portfolio-image"
+                        style="background-image: url('{{ asset('property/projectdevelopment/4.jpeg') }}');">
+                    </div>
+                </a>
+            </div>
 
+            <div class="col-12 col-md-6 col-lg-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    onclick="showImage('{{ asset('property/projectdevelopment/5.jpeg') }}')">
+                    <div class="portfolio-image"
+                        style="background-image: url('{{ asset('property/projectdevelopment/5.jpeg') }}');">
+                    </div>
+                </a>
+            </div>
 
-
+            <div class="col-12 col-md-6 col-lg-4">
+                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    onclick="showImage('{{ asset('property/projectdevelopment/6.jpeg') }}')">
+                    <div class="portfolio-image"
+                        style="background-image: url('{{ asset('property/projectdevelopment/6.jpeg') }}');">
+                    </div>
+                </a>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content bg-black">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center align-items-center p-0">
+                <img id="modalImage" src="" class="img-fluid w-100 h-100 object-fit-contain" alt="Project Image">
+            </div>
+        </div>
+    </div>
+</div>
 
+
+<!-- Bootstrap Modal for Image Preview -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">Project Image</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalImage" src="" class="img-fluid rounded" alt="Project Image">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Location Highlights -->
+<section class="about-main ratio_36 bg-brandcolor-light" id="locationhighlights" style="padding: 32px">
+    <div class="container">
+        <div class="title-2 mb-5 text-center d-flex flex-column align-items-center">
+            <h2 class="font-roboto">Location Highlights</h2>
+            <img src="{{ asset('property/images/titlesvg1.png') }}" alt="Title SVG" class="title-svg">
+        </div>
+
+    </div>
+    <div class="row gy-4 align-items-center">
+        <!-- Image Section (First on Mobile) -->
+        <div class="col-12 col-md-6 order-1 order-md-2 text-center">
+            <div class="portfolio-section zoom-gallery-multiple">
+                <img src="{{ asset('property/images/proposed.jpg') }}" class="img-fluid rounded w-100"
+                    alt="Location Image">
+            </div>
+        </div>
+
+        <!-- Text Content (Second on Mobile) -->
+        <div class="col-12 col-md-6 order-2 order-md-1">
+            <div class="about-content">
+                <!-- Project Location Highlights -->
+                <div class="mb-3">
+                    <h4 class="primarycolor-text d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="green"
+                            stroke-width="2" class="me-2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Project Location Highlights
+                    </h4>
+
+                    <!-- Styled Bullet Points -->
+                    <ul class="font-roboto list-unstyled ps-3 d-grid gap-2" style="font-size: 16px;">
+                        <li class="d-flex align-items-start">
+                            <span class="me-2 text-success">•</span> Near to Green Field
+                            International Airport and Aviation Hub.
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <span class="me-2 text-success">•</span> Equidistant to the three
+                            districts of Vizag, Vijayanagaram, and Srikakulam.
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <span class="me-2 text-success">•</span> Very close to NH-16 (Chennai to
+                            Kolkata) ensuring excellent connectivity.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Strategic Infrastructure -->
+                <div class="mb-3">
+                    <h4 class="primarycolor-text d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="green"
+                            stroke-width="2" class="me-2">
+                            <line x1="4" y1="21" x2="4" y2="14"></line>
+                            <line x1="4" y1="10" x2="4" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12" y2="3"></line>
+                            <line x1="20" y1="21" x2="20" y2="16"></line>
+                            <line x1="20" y1="12" x2="20" y2="3"></line>
+                        </svg>
+                        Strategic Infrastructure
+                    </h4>
+
+                    <!-- Styled Bullet Points -->
+                    <ul class="font-roboto list-unstyled ps-3 d-grid gap-2" style="font-size: 16px;">
+                        <li class="d-flex align-items-start">
+                            <span class="me-2 text-success">•</span> Close to the Madhurawada IT
+                            Corridor enhancing access to technological and business hubs.
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <span class="me-2 text-success">•</span> Near the Pydibhimavaram
+                            Industrial Corridor providing strategic advantages for businesses.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Global Attractions -->
+                <div class="mb-3">
+                    <h4 class="primarycolor-text d-flex align-items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="green"
+                            stroke-width="2" class="me-2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                        </svg>
+                        Global Attractions
+                    </h4>
+
+                    <!-- Styled Bullet Points -->
+                    <ul class="font-roboto list-unstyled ps-3 d-grid gap-2" style="font-size: 16px;">
+                        <li class="d-flex align-items-start">
+                            <span class="me-2 text-success">•</span> Near the prestigious coastal
+                            corridor tourism hub and SEZs, making it an attractive destination.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- End Row -->
+    </div>
+</section>
+
+<section id="downloadbrochure"></section>
+<section></section>
+<!-- Downloadbrochure section -->
+<section style="display: flex; justify-content: center">
+    <div class="home-search-6 m-5">
+        <button type="button" class="btn btn-secondary" style="width: 100%">
+            Download Project Layout
+        </button>
+        <div class="vertical-search">
+            <div></div>
+        </div>
+    </div>
+</section>
+</div>
+</div>
+</div>
+</section>
 
 <div class="section sec-testimonials">
     <div class="container">
@@ -471,12 +520,10 @@
             <div class="col-md-6 text-md-end">
                 <div id="testimonial-nav">
                     <span class="prev" data-controls="prev">Prev</span>
-
                     <span class="next" data-controls="next">Next</span>
                 </div>
             </div>
         </div>
-
         <div class="row">
             <div class="col-lg-4"></div>
         </div>
@@ -807,5 +854,13 @@
         });
     });
 </script>
+
+<!-- JavaScript to Update Modal Image -->
+<script>
+    function showImage(imageSrc) {
+        document.getElementById('modalImage').src = imageSrc;
+    }
+</script>
+
 
 @endsection
