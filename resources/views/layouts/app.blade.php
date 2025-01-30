@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{asset('property/css/aos.css')}}" />
     <link rel="stylesheet" href="{{asset('property/css/style.css')}}" />
 
+
     <title>@yield('title', 'Realestate')</title>
 
     <style>
@@ -77,11 +78,15 @@
                                     <ul class="dropdown">
                                         <li><a href="{{route('profile.edit')}}">{{ __('Profile') }}</a></li>
                                         <li>
-                                            <form method="POST" action="{{ route('logout') }}" id="form">
+                                            <form method="POST" action="{{ route('logout') }}" id="logout-form">
                                                 @csrf
-                                                {{ __('Log Out') }}
+                                                <button type="submit"
+                                                    class="btn btn-link text-dark text-decoration-none p-3 m-0">
+                                                    {{ __('Logout') }}
+                                                </button>
                                             </form>
                                         </li>
+
                                     </ul>
                                 </li>
 
@@ -221,6 +226,7 @@
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
+    <script src="{{asset('js/core/jquery-3.7.1.min.js')}}"></script>
 
     <script src="{{asset('property/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('property/js/tiny-slider.js')}}"></script>
@@ -228,6 +234,57 @@
     <script src="{{asset('property/js/navbar.js')}}"></script>
     <script src="{{asset('property/js/counter.js')}}"></script>
     <script src="{{asset('property/js/custom.js')}}"></script>
+    <!-- Bootstrap Notify -->
+    <script src="{{asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Success notification
+            @if(session('success'))
+                var content = {
+                    message: "{{ session('success') }}",
+                    title: "Success",
+                    icon: "fa fa-bell"
+                };
+
+                $.notify(content, {
+                    type: 'success', // You can change this to match your notification type
+                    placement: {
+                        from: 'top', // Correct capitalization
+                        align: 'right' // Correct capitalization
+                    },
+                    time: 1000,
+                    delay: 5000, // Adjust delay if needed
+                });
+            @endif
+
+
+            // Error notification
+            @if($errors->any())
+                var content = {
+                    message: "{{ $errors->first() }}",
+                    title: "Error",
+                    icon: "fa fa-exclamation-circle",
+                };
+
+                $.notify(content, {
+                    type: "danger", // Error style
+                    allow_dismiss: true,
+                    delay: 5000,
+                    placement: {
+                        from: "top",
+                        align: "right",
+                    },
+                    offset: { x: 20, y: 70 },
+                    animate: {
+                        enter: "animated fadeInDown",
+                        exit: "animated fadeOutUp",
+                    },
+                });
+            @endif
+
+        });
+    </script>
 </body>
 
 </html>
