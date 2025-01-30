@@ -21,7 +21,23 @@
     <link rel="stylesheet" href="{{asset('property/css/tiny-slider.css')}}" />
     <link rel="stylesheet" href="{{asset('property/css/aos.css')}}" />
     <link rel="stylesheet" href="{{asset('property/css/style.css')}}" />
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
 
+    <!-- jQuery (Required for Slick) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
+    <!-- Add Bootstrap CSS (if not already included) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Add Bootstrap JS (if not already included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    
 
     <title>@yield('title', 'Realestate')</title>
 
@@ -60,6 +76,9 @@
                         <li class="{{request()->is('/') ? 'active' : '' }}"><a href="{{url('/')}}">Home</a></li>
                         <li class="{{request()->is('about-us') ? 'active' : ''}}"><a
                                 href="{{route('about-us')}}">About</a>
+                        </li>
+                        <li class="{{request()->is('gallery') ? 'active' : ''}}"><a
+                                href="{{route('gallery')}}">Gallery</a>
                         </li>
                         <!-- <li class="{{request()->is('properties') ? 'active' : ''}}"><a
                                 href="{{route('properties')}}">Properties</a></li> -->
