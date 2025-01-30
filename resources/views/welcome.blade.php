@@ -44,6 +44,57 @@
         width: 90px;
         margin-bottom: -55px;
     }
+
+    /* Reduce modal width */
+    .modal-lg {
+        max-width: 80%;
+        /* Adjust modal width */
+    }
+
+    /* Position the navigation buttons outside the image */
+    .custom-nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: background 0.3s ease-in-out;
+    }
+
+    /* .custom-nav-btn:hover {
+        background: rgba(0, 0, 0, 0.8);
+    } */
+
+    /* Adjust left and right button positions */
+    .carousel-control-prev {
+        left: -60px;
+        /* Moves outside modal */
+    }
+
+    .carousel-control-next {
+        right: -60px;
+        /* Moves outside modal */
+    }
+
+
+
+    /* Add some padding inside modal */
+    .modal-body {
+        padding: 20px;
+    }
+
+    /* Improve image styling */
+    .carousel-item img {
+        max-height: 500px;
+        width: auto;
+        margin: auto;
+    }
 </style>
 
 
@@ -53,7 +104,7 @@
         <div class="img overlay" style="background-image: url('{{asset('property/images/hero_bg_2.jpg')}}')"></div>
         <div class="img overlay" style="background-image: url('{{asset('property/images/hero_bg_1.jpg')}}')"></div>
     </div>
-
+    <!-- 
     <div class="container">
         <div class="row justify-content-center align-items-center">
             <div class="col-lg-9 text-center">
@@ -67,7 +118,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
 
@@ -107,187 +158,202 @@
                     <img src="{{ asset('property/images/hero_bg_1.jpg') }}" alt="Hero Background"
                         style="width: 100%; height: 300px; min-height: 300px; margin-top: 20px; border: 2px solid black;">
                 </div>
-
-                <br>
-                <!-- Project info -->
-                <section id="projectinfo" style="padding: 32px; text-align: center" data-aos="fade-up">
-                    <div class="container">
-                        <div class="row">
-                            <div class="title-2 mb-5 text-center d-flex flex-column align-items-center">
-                                <h2 class="font-roboto">SATHYAM GARDENS</h2>
-                                <p class="font-roboto">SALUR -PARVATHIPURAM</p>
-                            </div>
-                        </div>
-                </section>
-
-                <!-- Payment options -->
-                <section class="pricing-section slick-between slick-shadow" id="paymentoption" style="padding: 32px">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col text-center">
-                                <div class="title-2 mb-5">
-                                    <h2 class="font-roboto">Payment Options</h2>
-                                    <img src="{{ asset('property/images/titlesvg1.png') }}" alt="Title SVG"
-                                        class="title-svg">
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <!-- First Pricing Box -->
-                            <div class="col-sm-6">
-                                <div class="m-2 bg-brandcolor-light">
-                                    <div class="pricing-box">
-                                        <div class="pricing-details">
-                                            <h3 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                                Residential </h3>
-                                        </div>
-                                        <ul>
-                                            <li>A - 100% Spot Payment</li>
-                                        </ul>
-                                        <div class="price">
-                                            <h4 style="color: rgb(210, 158, 42)">Rs. 15,299</h4>
-                                            <span class="light-text">Per Square Yard</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Second Pricing Box -->
-                            <div class="col-sm-6">
-                                <div class="m-2 bg-brandcolor-light">
-                                    <div class="pricing-box">
-                                        <div class="pricing-details">
-                                            <h3 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                                Residential </h3>
-                                        </div>
-                                        <ul>
-                                            <li>
-                                                3 Months Option - 25% within a week &amp; Balance 75% on or
-                                                before 3 months
-                                            </li>
-                                        </ul>
-                                        <div class="price">
-                                            <h4 style="color: rgb(210, 158, 42)">Rs. 15,999</h4>
-                                            <span class="light-text">Per Square Yard</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Amenities -->
-                <section class="pricing-section slick-between slick-shadow" id="amenities" style="padding: 32px">
-                    <div class="container">
-                        <div class="row">
-                            <div class="title-2 mb-5 text-center d-flex flex-column align-items-center">
-                                <h2 class="font-roboto">Amenities</h2>
-                                <img src="{{ asset('property/images/titlesvg1.png') }}" alt="Title SVG"
-                                    class="title-svg">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 mb-2">
-                            <div class="m-2">
-                                <div class="pricing-box1 bg-light text-center p-3">
-                                    <img src="{{asset('property/amenities/24 x7 Security.png')}}" height="45px"
-                                        alt="24x7 Security" />
-                                    <div class="pricing-details mt-2">24x7 Security</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3 mb-2">
-                            <div class="m-2">
-                                <div class="pricing-box1 bg-light text-center p-3">
-                                    <img src="{{asset('property/amenities/Designer Street Lighting.png')}}"
-                                        height="45px" alt="Designer Street Lighting" />
-                                    <div class="pricing-details mt-2">
-                                        Designer Street Lighting
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3 mb-2">
-                            <div class="m-2">
-                                <div class="pricing-box1 bg-light text-center p-3">
-                                    <img src="{{asset('property/amenities/Exclusive Guarded Community.png')}}"
-                                        height="45px" alt="Exclusive Guarded Community" />
-                                    <div class="pricing-details mt-2">
-                                        Exclusive Guarded Community
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3 mb-2">
-                            <div class="m-2">
-                                <div class="pricing-box1 bg-light text-center p-3">
-                                    <img src="{{asset('property/amenities/Parks& Gardens Open Spaces.png')}}"
-                                        height="45px" alt="Parks & Gardens Open Spaces" />
-                                    <div class="pricing-details mt-2">
-                                        Parks & Gardens Open Spaces
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3 mb-2">
-                            <div class="m-2">
-                                <div class="pricing-box1 bg-light text-center p-3">
-                                    <img src="{{asset('property/amenities/Rain Water Harvesting.png')}}" height="45px"
-                                        alt="Rain Water Harvesting" />
-                                    <div class="pricing-details mt-2">Rain Water Harvesting</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3 mb-2">
-                            <div class="m-2">
-                                <div class="pricing-box1 bg-light text-center p-3">
-                                    <img src="{{asset('property/amenities/Underground Drainage System.png')}}"
-                                        height="45px" alt="Underground Drainage System" />
-                                    <div class="pricing-details mt-2">
-                                        Underground Drainage System
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3 mb-2">
-                            <div class="m-2">
-                                <div class="pricing-box1 bg-light text-center p-3">
-                                    <img src="{{asset('property/amenities/Underground Water Supply.png')}}"
-                                        height="45px" alt="Underground Water Supply" />
-                                    <div class="pricing-details mt-2">
-                                        Underground Water Supply
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-3 mb-2">
-                            <div class="m-2">
-                                <div class="pricing-box1 bg-light text-center p-3">
-                                    <img src="{{asset('property/amenities/Wide Spacious Black Top Roads.png')}}"
-                                        height="45px" alt="Wide Spacious Black Top Roads" />
-                                    <div class="pricing-details mt-2">
-                                        Wide Spacious Black Top Roads
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
             </div>
 </section>
 
 
+<br>
+<!-- Project info -->
+<section id="projectinfo"></section>
+
+<section style="padding: 32px; text-align: center" data-aos="fade-up">
+    <div class="container">
+        <div class="col text-center">
+            <div class="title-2 mb-5">
+                <h2 class="font-roboto">Project Information</h2>
+                <img src="{{ asset('property/images/titlesvg1.png') }}" alt="Title SVG" class="title-svg">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="title-2 mb-5 text-center d-flex flex-column align-items-center">
+                <h2 class="font-roboto">SATHYAM GARDENS</h2>
+                <p class="font-roboto">SALUR -PARVATHIPURAM</p>
+            </div>
+        </div>
+</section>
+
+
+<!-- Payment options -->
+<section id="paymentoption"></section>
+<!-- <section></section> -->
+<section class="pricing-section slick-between slick-shadow" style="padding: 32px">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="title-2 mb-5">
+                    <h2 class="font-roboto">Payment Options</h2>
+                    <img src="{{ asset('property/images/titlesvg1.png') }}" alt="Title SVG" class="title-svg">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- First Pricing Box -->
+            <div class="col-sm-6">
+                <div class="m-2 bg-brandcolor-light">
+                    <div class="pricing-box">
+                        <div class="pricing-details">
+                            <h3 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                Residential </h3>
+                        </div>
+                        <ul>
+                            <li>A - 100% Spot Payment</li>
+                        </ul>
+                        <div class="price">
+                            <h4 style="color: rgb(210, 158, 42)">Rs. 15,299</h4>
+                            <span class="light-text">Per Square Yard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Pricing Box -->
+            <div class="col-sm-6">
+                <div class="m-2 bg-brandcolor-light">
+                    <div class="pricing-box">
+                        <div class="pricing-details">
+                            <h3 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                Residential </h3>
+                        </div>
+                        <ul>
+                            <li>
+                                3 Months Option - 25% within a week &amp; Balance 75% on or
+                                before 3 months
+                            </li>
+                        </ul>
+                        <div class="price">
+                            <h4 style="color: rgb(210, 158, 42)">Rs. 15,999</h4>
+                            <span class="light-text">Per Square Yard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Amenities -->
+<section id="amenities"></section>
+<!-- <section></section> -->
+<section class="pricing-section slick-between slick-shadow" id="amenities" style="padding: 32px">
+    <div class="container">
+        <div class="row">
+            <div class="title-2 mb-5 text-center d-flex flex-column align-items-center">
+                <h2 class="font-roboto">Amenities</h2>
+                <img src="{{ asset('property/images/titlesvg1.png') }}" alt="Title SVG" class="title-svg">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3 mb-2">
+            <div class="m-2">
+                <div class="pricing-box1 bg-light text-center p-3">
+                    <img src="{{asset('property/amenities/24 x7 Security.png')}}" height="45px" alt="24x7 Security" />
+                    <div class="pricing-details mt-2">24x7 Security</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-2">
+            <div class="m-2">
+                <div class="pricing-box1 bg-light text-center p-3">
+                    <img src="{{asset('property/amenities/Designer Street Lighting.png')}}" height="45px"
+                        alt="Designer Street Lighting" />
+                    <div class="pricing-details mt-2">
+                        Designer Street Lighting
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-2">
+            <div class="m-2">
+                <div class="pricing-box1 bg-light text-center p-3">
+                    <img src="{{asset('property/amenities/Exclusive Guarded Community.png')}}" height="45px"
+                        alt="Exclusive Guarded Community" />
+                    <div class="pricing-details mt-2">
+                        Exclusive Guarded Community
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-2">
+            <div class="m-2">
+                <div class="pricing-box1 bg-light text-center p-3">
+                    <img src="{{asset('property/amenities/Parks& Gardens Open Spaces.png')}}" height="45px"
+                        alt="Parks & Gardens Open Spaces" />
+                    <div class="pricing-details mt-2">
+                        Parks & Gardens Open Spaces
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-2">
+            <div class="m-2">
+                <div class="pricing-box1 bg-light text-center p-3">
+                    <img src="{{asset('property/amenities/Rain Water Harvesting.png')}}" height="45px"
+                        alt="Rain Water Harvesting" />
+                    <div class="pricing-details mt-2">Rain Water Harvesting</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-2">
+            <div class="m-2">
+                <div class="pricing-box1 bg-light text-center p-3">
+                    <img src="{{asset('property/amenities/Underground Drainage System.png')}}" height="45px"
+                        alt="Underground Drainage System" />
+                    <div class="pricing-details mt-2">
+                        Underground Drainage System
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-2">
+            <div class="m-2">
+                <div class="pricing-box1 bg-light text-center p-3">
+                    <img src="{{asset('property/amenities/Underground Water Supply.png')}}" height="45px"
+                        alt="Underground Water Supply" />
+                    <div class="pricing-details mt-2">
+                        Underground Water Supply
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 mb-2">
+            <div class="m-2">
+                <div class="pricing-box1 bg-light text-center p-3">
+                    <img src="{{asset('property/amenities/Wide Spacious Black Top Roads.png')}}" height="45px"
+                        alt="Wide Spacious Black Top Roads" />
+                    <div class="pricing-details mt-2">
+                        Wide Spacious Black Top Roads
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <!-- Project Development -->
+<section id="projectdevelopment"></section>
+<!-- <section></section> -->
 <section class="about-main ratio_36 bg-brandcolor-light" id="projectdevelopment" style="padding: 32px">
     <div class="container">
         <div class="row">
@@ -300,115 +366,77 @@
         </div>
 
         <div class="row g-3">
-            <!-- Image Items -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    onclick="showImage('{{ asset('property/projectdevelopment/1.jpeg') }}')">
-                    <div class="portfolio-image"
-                        style="background-image: url('{{ asset('property/projectdevelopment/1.jpeg') }}');">
-                    </div>
-                </a>
-            </div>
+            @php
+                $images = ['1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg', '5.jpeg', '6.jpeg'];
+            @endphp
 
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    onclick="showImage('{{ asset('property/projectdevelopment/2.jpeg') }}')">
-                    <div class="portfolio-image"
-                        style="background-image: url('{{ asset('property/projectdevelopment/2.jpeg') }}');">
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    onclick="showImage('{{ asset('property/projectdevelopment/3.jpeg') }}')">
-                    <div class="portfolio-image"
-                        style="background-image: url('{{ asset('property/projectdevelopment/3.jpeg') }}');">
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    onclick="showImage('{{ asset('property/projectdevelopment/4.jpeg') }}')">
-                    <div class="portfolio-image"
-                        style="background-image: url('{{ asset('property/projectdevelopment/4.jpeg') }}');">
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    onclick="showImage('{{ asset('property/projectdevelopment/5.jpeg') }}')">
-                    <div class="portfolio-image"
-                        style="background-image: url('{{ asset('property/projectdevelopment/5.jpeg') }}');">
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    onclick="showImage('{{ asset('property/projectdevelopment/6.jpeg') }}')">
-                    <div class="portfolio-image"
-                        style="background-image: url('{{ asset('property/projectdevelopment/6.jpeg') }}');">
-                    </div>
-                </a>
-            </div>
+            @foreach($images as $index => $image)
+                <div class="col-12 col-md-6 col-lg-4">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal" onclick="showImage({{ $index }})">
+                        <div class="portfolio-image"
+                            style="background-image: url('{{ asset("property/projectdevelopment/$image") }}');"></div>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </div>
 </section>
 
 <!-- Modal -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content bg-black">
+    <div class="modal-dialog modal-lg modal-dialog-centered"> <!-- Reduced Width & Centered -->
+        <div class="modal-content bg-transparent p-3 rounded-3"> <!-- bg-transparent for no background -->
             <div class="modal-header border-0">
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+                <!-- Ensure close button has proper visibility -->
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                    style="z-index: 1051;"></button>
             </div>
-            <div class="modal-body d-flex justify-content-center align-items-center p-0">
-                <img id="modalImage" src="" class="img-fluid w-100 h-100 object-fit-contain" alt="Project Image">
+            <div class="modal-body position-relative d-flex justify-content-center align-items-center">
+                <!-- Carousel -->
+                <div id="imageCarousel" class="carousel slide">
+                    <div class="carousel-inner">
+                        @foreach($images as $index => $image)
+                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                <img src="{{ asset("property/projectdevelopment/$image") }}"
+                                    class="img-fluid rounded shadow-lg" alt="Project Image">
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <!-- Previous & Next Buttons -->
+                <button class="carousel-control-prev custom-nav-btn" type="button" data-bs-target="#imageCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next custom-nav-btn" type="button" data-bs-target="#imageCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
             </div>
         </div>
     </div>
 </div>
 
 
-<!-- Bootstrap Modal for Image Preview -->
-<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="imageModalLabel">Project Image</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-center">
-                <img id="modalImage" src="" class="img-fluid rounded" alt="Project Image">
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
+
 
 <!-- Location Highlights -->
+<section id="locationhighlights"></section>
+<!-- <section></section> -->
 <section class="about-main ratio_36 bg-brandcolor-light" id="locationhighlights" style="padding: 32px">
     <div class="container">
         <div class="title-2 mb-5 text-center d-flex flex-column align-items-center">
             <h2 class="font-roboto">Location Highlights</h2>
             <img src="{{ asset('property/images/titlesvg1.png') }}" alt="Title SVG" class="title-svg">
         </div>
-
     </div>
     <div class="row gy-4 align-items-center">
-        <!-- Image Section (First on Mobile) -->
-        <div class="col-12 col-md-6 order-1 order-md-2 text-center">
-            <div class="portfolio-section zoom-gallery-multiple">
-                <img src="{{ asset('property/images/proposed.jpg') }}" class="img-fluid rounded w-100"
-                    alt="Location Image">
-            </div>
-        </div>
-
         <!-- Text Content (Second on Mobile) -->
-        <div class="col-12 col-md-6 order-2 order-md-1">
+        <div class="col-lg-6 order-2 order-md-1">
             <div class="about-content">
                 <!-- Project Location Highlights -->
                 <div class="mb-3">
@@ -484,12 +512,36 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
 
+        <!-- Image Section (First on Mobile) -->
+        <div class="col-lg-6 order-1 order-md-2 text-center">
+            <div class="zoom-gallery-multiple">
+                <img src="{{ asset('property/images/proposed.jpg') }}" class="img-fluid rounded w-50"
+                    alt="Location Image" data-bs-toggle="modal" data-bs-target="#imageModal2">
             </div>
         </div>
     </div> <!-- End Row -->
+
+    <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex justify-content-center align-items-center">
+                    <!-- Added flexbox classes here -->
+                    <img src="{{ asset('property/images/proposed.jpg') }}" class="img-fluid" alt="Location Image"
+                        style="max-width:30%; height: auto;">
+                </div>
+            </div>
+        </div>
     </div>
+
+
 </section>
+
 
 <section id="downloadbrochure"></section>
 <section></section>
@@ -856,9 +908,11 @@
 </script>
 
 <!-- JavaScript to Update Modal Image -->
+<!-- JavaScript to Initialize Carousel -->
 <script>
-    function showImage(imageSrc) {
-        document.getElementById('modalImage').src = imageSrc;
+    function showImage(index) {
+        var imageCarousel = new bootstrap.Carousel(document.getElementById('imageCarousel'));
+        imageCarousel.to(index); // Jump to the clicked image
     }
 </script>
 

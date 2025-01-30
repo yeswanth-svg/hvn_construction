@@ -13700,7 +13700,7 @@ a {
 
 @media (max-width: 767px) {
     .single-property .description-section .menu-top li.active a {
-        border-bottom: none;
+        border-bottom: none !important;
     }
 }
 .bg-brandcolor-light {

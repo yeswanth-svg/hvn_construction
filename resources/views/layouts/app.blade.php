@@ -24,20 +24,8 @@
     <!-- Slick CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css" />
 
-    <!-- jQuery (Required for Slick) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Slick JS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
-
-    <!-- Add Bootstrap CSS (if not already included) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Add Bootstrap JS (if not already included) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    
 
     <title>@yield('title', 'Realestate')</title>
 
@@ -82,8 +70,8 @@
                         </li>
                         <!-- <li class="{{request()->is('properties') ? 'active' : ''}}"><a
                                 href="{{route('properties')}}">Properties</a></li> -->
-                        <li class="{{request()->is('services') ? 'active' : ''}}"><a
-                                href="{{route('services')}}">Services</a></li>
+                        <!-- <li class="{{request()->is('services') ? 'active' : ''}}"><a
+                                    href="{{route('services')}}">Services</a></li> -->
                         <li class="{{request()->is('contact') ? 'active' : ''}}"><a href="{{route('contact')}}">Contact
                                 Us</a></li>
 
@@ -159,8 +147,8 @@
                     <div class="widget">
                         <h3>Sources</h3>
                         <ul class="list-unstyled float-start links">
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Services</a></li>
+                            <li><a href="{{route('about-us')}}">About us</a></li>
+                            <!-- <li><a href="#">Services</a></li> -->
                             <li><a href="#">Vision</a></li>
                             <li><a href="#">Mission</a></li>
                             <li><a href="#">Terms</a></li>
@@ -183,8 +171,8 @@
                         <h3>Links</h3>
                         <ul class="list-unstyled links">
                             <li><a href="#">Our Vision</a></li>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="{{route('about-us')}}">About us</a></li>
+                            <li><a href="{{route('contact')}}">Contact us</a></li>
                         </ul>
 
                         <ul class="list-unstyled social">
@@ -224,13 +212,10 @@
                             document.write(new Date().getFullYear());
                         </script>
                         . All Rights Reserved. &mdash; Designed with love by
-                        <a href="https://untree.co">Untree.co</a>
+                        <a href="https://cloudeyetech.com/">cloudeyetech</a>
                         <!-- License information: https://untree.co/license/ -->
                     </p>
-                    <div>
-                        Distributed by
-                        <a href="https://themewagon.com/" target="_blank">themewagon</a>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -246,6 +231,9 @@
         </div>
     </div>
     <script src="{{asset('js/core/jquery-3.7.1.min.js')}}"></script>
+    <!-- Slick JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+
 
     <script src="{{asset('property/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('property/js/tiny-slider.js')}}"></script>
