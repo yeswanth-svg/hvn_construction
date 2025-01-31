@@ -50,7 +50,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="name" class="form-label fs-5 fw-bold text-secondary">Name</label>
-                                <p class="text-dark border rounded px-3 py-2">{{ $epi->nane }}</p>
+                                <p class="text-dark border rounded px-3 py-2">{{ $epi->name }}</p>
                             </div>
                         </div>
                         <div class="row mb-3">

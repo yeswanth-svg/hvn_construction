@@ -88,10 +88,14 @@
                                 </thead>
                                 <tbody>
                                     @forelse ($epis as $epi)
-                                    <tr>
+                                    
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $epi->project->project_name }}</td>
-                                        <td>{{ $epi->plot_no }}</td>
+                                        <td>
+                                            <a class="show-button" data-id="{{$epi->id}}"
+                                                style="text-decoration:underline !important; cursor:pointer;">
+                                                {{ $epi->plot_no }}</a>
+                                        </td>
                                         <td>{{ $epi->ownership }}</td>
                                         <td>{{ $epi->name }}</td>
                                         <td>{{ $epi->geo_coordinates_n }}</td>
@@ -103,7 +107,18 @@
                                         <td>{{ $epi->size_west }}</td>
                                         <td>{{ $epi->size_north }}</td>
                                         <td>{{ $epi->size_south }}</td>
-                                        <td>{{ $epi->plot_availability_for_sale }}</td>
+                                        <td>
+                                                    @if($epi->plot_availability_for_sale === 'yes')
+                                                        <span class="badge badge-success">Available</span>
+                                                    @elseif($epi->plot_availability_for_sale === 'no')
+                                                        <span class="badge badge-danger">Sold</span>
+                                                    @elseif($epi->plot_availability_for_sale === 'mortgaged')
+                                                        <span class="badge badge-warning">Mortgaged</span>
+                                                    @else
+                                                        <span class="badge badge-secondary">Unknown</span>
+                                                    @endif
+                                                </td>
+
                                         <td>
                                             <div class="form-button-action">
 
@@ -132,8 +147,8 @@
 
                                             </div>
                                         </td>
-                                    </tr>
-                                    @endforeach
+                                        </tr>
+                                        @endforeach
                                 </tbody>
                             </table>
                         </div>

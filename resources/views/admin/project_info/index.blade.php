@@ -83,7 +83,12 @@
                                     @forelse ($projects as $project)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $project->project_name }}</td>
+                                        <td>
+                                            <a class="show-button" data-id="{{$project->id}}"
+                                                style="text-decoration:underline !important; cursor:pointer;">
+                                                {{ $project->project_name }}
+                                            </a>
+                                        </td>
                                         <td>{{ $project->lp_no }}</td>
                                         <td>{{ $project->rera_no }}</td>
                                         <td>{{ $project->location }}</td>

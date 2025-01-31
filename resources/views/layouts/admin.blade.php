@@ -131,7 +131,7 @@
                             <li class="nav-item">
                                 <a href="{{route('admin.customer-details.index')}}">
                                     <i class="fas fa-users"></i>
-                                    <p>Coustmer Details</p>
+                                    <p>Customer Details</p>
                                     <!-- <span class="caret"></span> -->
                                 </a>
                             </li>
@@ -140,7 +140,7 @@
                         @can('manage-company-accounts')
                             <li class="nav-item">
                                 <a href="{{route('admin.company-accounts.index')}}">
-                                    <i class="fas fa-users"></i>
+                                    <i class="fas fa-university"></i>
                                     <p>Company Accounts</p>
                                     <!-- <span class="caret"></span> -->
                                 </a>

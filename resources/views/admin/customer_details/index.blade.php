@@ -91,7 +91,12 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $customer->project->project_name }}</td>
                                         <td>{{ $customer->plot_no }}</td>
-                                        <td>{{ $customer->customer_name }}</td>
+                                        <td>
+                                            <a class="show-button" data-id="{{$customer->id}}"
+                                                style="text-decoration:underline !important; cursor:pointer;">
+                                                {{ $customer->customer_name }}</a>
+
+                                        </td>
                                         <td>{{ $customer->phone_number }}</td>
                                         <td>{{ $customer->pan_no }}</td>
                                         <td>{{ $customer->aadhaar_no }}</td>

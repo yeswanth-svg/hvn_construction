@@ -84,7 +84,12 @@
                                     @forelse ($plots as $plot)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $plot->project->project_name }}</td>
+                                        <td>
+                                            <a class="show-button" data-id="{{$plot->id}}"
+                                                style="text-decoration:underline !important; cursor:pointer;">
+                                                {{ $plot->project->project_name }}
+                                            </a>
+                                        </td>
                                         <td>{{ $plot->total_plots }}</td>
                                         <td>{{ $plot->mortgaged_plots }}</td>
                                         <td>{{ $plot->developer_plots }}</td>

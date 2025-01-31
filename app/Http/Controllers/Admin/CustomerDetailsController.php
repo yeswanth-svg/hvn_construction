@@ -46,7 +46,7 @@ class CustomerDetailsController extends Controller
         // Validate the incoming request data
         $validated = $request->validate([
             'project_id' => 'required|exists:project_information,id',
-            'plot_no' => 'required|exists:e_p_i,plot_no', // Ensure the plot number exists in the `plots` table
+            'plot_no' => 'required|exists:e_p_i,plot_no', // Ensure the plot number exists in the `EPI` table
             'customer_name' => 'required|string|max:255',
             'phone_number' => 'required|string|max:15',
             'pan_no' => 'required|string|max:10',
@@ -60,15 +60,19 @@ class CustomerDetailsController extends Controller
             'status' => 'required|in:Booked,Registered',
         ]);
 
-
-
         // Store the validated data
-        CustomerDetail::create($validated);
+        $customerDetail = CustomerDetail::create($validated);
+
+        // If the status is "Booked" or "Registered", update the EPI table
+        if (in_array($validated['status'], ['Booked', 'Registered'])) {
+            EPI::where('plot_no', $validated['plot_no'])->update(['plot_availability_for_sale' => 'no']);
+        }
 
         // Redirect to the index route with a success message
         return redirect()->route('admin.customer-details.index')
-            ->with('success', 'Customer details Added successfully.');
+            ->with('success', 'Customer details added successfully.');
     }
+
 
     /**
      * Display the specified resource.
@@ -129,6 +133,10 @@ class CustomerDetailsController extends Controller
 
         // Update the customer details
         CustomerDetail::where('id', $id)->update($validated);
+        // If the status is "Booked" or "Registered", update the EPI table
+        if (in_array($validated['status'], ['Booked', 'Registered'])) {
+            EPI::where('plot_no', $validated['plot_no'])->update(['plot_availability_for_sale' => 'no']);
+        }
 
         // Redirect to the index route with a success message
         return redirect()->route('admin.customer-details.index')
