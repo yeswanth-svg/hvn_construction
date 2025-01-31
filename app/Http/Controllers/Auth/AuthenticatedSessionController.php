@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
         // Check the user's role and redirect accordingly
         $user = auth()->user(); // Get the authenticated user
 
-        if ($user->hasRole('admin')) { // Check if the user has the 'admin' role
+        if ($user->hasRole('admin') || $user->hasRole('staff')) { // Check if the user has the 'admin' role
             return redirect()->route('admin.dashboard');
         }
 

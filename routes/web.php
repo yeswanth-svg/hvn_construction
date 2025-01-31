@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CustomerDetailsController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PaymentDetailsController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\ReportsController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -52,8 +53,13 @@ Route::name('admin.')->middleware('admin')->group(function () {
 
     // web.php
     Route::get('/get-plot-area/{plot_no}', [CustomerDetailsController::class, 'getPlotArea'])->name('plot.getArea');
-    Route::get('/reports', [DashboardController::class, 'reports'])->name('reports');
-    Route::get('/print/{id}', [DashboardController::class, 'show'])->name('print');
+
+
+    Route::get('/plot-reports', [ReportsController::class, 'plot_reports'])->name('plot-reports');
+    Route::get('/financial-reports', [ReportsController::class, 'financial_reports'])->name('financial-reports');
+    Route::get('/customer-reports', [ReportsController::class, 'customers_reports'])->name('customer-reports');
+
+    Route::get('/print/{id}', [ReportsController::class, 'show'])->name('print');
 
 
 });

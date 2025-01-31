@@ -219,7 +219,7 @@
 
                 // Update the form action with the correct ID
                 const form = modal.querySelector('form');
-                form.action = `/admin/permissions/${id}`; // Adjust this URL to match your route
+                form.action = `/permissions/${id}`; // Adjust this URL to match your route
             });
         });
     });

@@ -38,41 +38,53 @@
                             @csrf
                             @method('PUT')
 
-                            <div class="mb-3">
-                                <label for="bank_name" class="form-label fs-5 fw-bold text-secondary">Bank
-                                    Name</label>
-                                <input type="text" name="bank_name" id="bank_name" class="form-control" required
-                                    value="{{$account->bank_name}}" placeholder="Enter Project Name">
+                            <div class="row">
+                                <!-- First Column -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="bank_name" class="form-label fs-5 fw-bold text-secondary">Bank
+                                            Name</label>
+                                        <input type="text" name="bank_name" id="bank_name" class="form-control" required
+                                            value="{{ $account->bank_name }}" placeholder="Enter Bank Name">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="account_name" class="form-label fs-5 fw-bold text-secondary">Account
+                                            Name</label>
+                                        <input type="text" name="account_name" id="account_name" class="form-control"
+                                            required value="{{ $account->account_name }}"
+                                            placeholder="Enter Account Name">
+                                    </div>
+                                </div>
+
+                                <!-- Second Column -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="account_no" class="form-label fs-5 fw-bold text-secondary">Account
+                                            Number</label>
+                                        <input type="text" name="account_no" id="account_no" class="form-control"
+                                            required value="{{ $account->account_no }}"
+                                            placeholder="Enter Account Number">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="ifsc_code" class="form-label fs-5 fw-bold text-secondary">IFSC
+                                            Code</label>
+                                        <input type="text" name="ifsc_code" id="ifsc_code" class="form-control" required
+                                            value="{{ $account->ifsc_code }}" placeholder="Enter IFSC Code">
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="account_name" class="form-label fs-5 fw-bold text-secondary">Account
-                                    Name</label>
-                                <input type="text" name="account_name" id="account_name" class="form-control" required
-                                    value="{{$account->account_name}}" placeholder="Enter Account Name">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="account_no" class="form-label fs-5 fw-bold text-secondary">Account
-                                    Number</label>
-                                <input type="text" name="account_no" id="account_no" class="form-control" required
-                                    value="{{$account->account_no}}" placeholder="Enter Account Number">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="ifsc_code" class="form-label fs-5 fw-bold text-secondary">IFSC Code</label>
-                                <input type="text" name="ifsc_code" id="ifsc_code" class="form-control" required
-                                    value="{{$account->ifsc_code}}" placeholder="Enter IFSC Code">
-                            </div>
-
-
-                            <div class="mt-4">
+                            <!-- Submit & Cancel Buttons -->
+                            <div class="mt-4 text-center">
                                 <button type="submit" class="btn btn-primary">Update</button>
                                 <a href="{{ route('admin.company-accounts.index') }}"
                                     class="btn btn-secondary">Cancel</a>
                             </div>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>

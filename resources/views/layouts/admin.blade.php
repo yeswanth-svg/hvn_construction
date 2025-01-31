@@ -88,51 +88,6 @@
 
                             </a>
                         </li>
-                        @can('manage-roles')
-                            <li class="nav-section">
-                                <span class="sidebar-mini-icon">
-                                    <i class="fa fa-ellipsis-h"></i>
-                                </span>
-                                <h4 class="text-section">Role Management</h4>
-                            </li>
-                        @endcan
-
-                        @can('manage-roles')
-                            <li class="nav-item">
-                                <a href="{{route('admin.roles.index')}}">
-                                    <i class="fas fa-user-shield"></i>
-                                    <p>Roles</p>
-                                    <!-- <span class="caret"></span> -->
-                                </a>
-                            </li>
-                        @endcan
-
-
-
-                        @can('manage-permissions')
-                            <li class="nav-item">
-                                <a data-bs-toggle="collapse" href="#per" aria-expanded="false" aria-controls="per">
-                                    <i class="fas fa-binoculars"></i>
-                                    <p>Manage Permissions</p>
-                                    <span class="caret"></span>
-                                </a>
-                                <div class="collapse" id="per" aria-labelledby="headingPer">
-                                    <ul class="nav nav-collapse">
-                                        <li>
-                                            <a href="{{route('admin.permissions.index')}}">
-                                                <span class="sub-item">Add Permissions</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="{{route('admin.assign-permissions')}}">
-                                                <span class="sub-item">Assign Permissions</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        @endcan
-
 
 
                         <li class="nav-section">
@@ -192,16 +147,86 @@
                             </li>
                         @endcan
 
-                        @can('manage-company-accounts')
+                        @can('manage-reports')
+
                             <li class="nav-item">
-                                <a href="{{route('admin.reports')}}">
+                                <a data-bs-toggle="collapse" href="#role" aria-expanded="false" aria-controls="role">
                                     <i class="fas fa-file-alt"></i>
                                     <p>Reports</p>
-                                    <!-- <span class="caret"></span> -->
+                                    <span class="caret"></span>
                                 </a>
+                                <div class="collapse" id="role" aria-labelledby="headingPer">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{route('admin.plot-reports')}}">
+                                                <span class="sub-item">Land Owner/Developer Plot Details</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('admin.financial-reports')}}">
+                                                <span class="sub-item">Financial Statement</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('admin.customer-reports')}}">
+                                                <span class="sub-item">Customer Information</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+
+                        @endcan
+
+
+
+                        @can('manage-roles')
+                            <li class="nav-section">
+                                <span class="sidebar-mini-icon">
+                                    <i class="fa fa-ellipsis-h"></i>
+                                </span>
+                                <h4 class="text-section">Role Management</h4>
                             </li>
                         @endcan
 
+                        @can('manage-roles')
+                            <li class="nav-item">
+                                <a href="{{route('admin.roles.index')}}">
+                                    <i class="fas fa-user-shield"></i>
+                                    <p>Roles</p>
+                                    <!-- <span class="caret"></span> -->
+                                </a>
+                            </li>
+
+
+                        @endcan
+
+
+
+                        @can('manage-permissions')
+                            <li class="nav-item">
+                                <a data-bs-toggle="collapse" href="#per" aria-expanded="false" aria-controls="per">
+                                    <i class="fas fa-binoculars"></i>
+                                    <p>Manage Permissions</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="per" aria-labelledby="headingPer">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{route('admin.permissions.index')}}">
+                                                <span class="sub-item">Add Permissions</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('admin.assign-permissions')}}">
+                                                <span class="sub-item">Assign Permissions</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        @endcan
 
 
                     </ul>

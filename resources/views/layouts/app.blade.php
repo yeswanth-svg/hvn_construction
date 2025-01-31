@@ -77,9 +77,16 @@
 
                         @if (Route::has('login'))
                             @auth
-                                <li class="{{request()->is('dashboard') ? 'active' : ''}}"><a
-                                        href="{{route('dashboard')}}">Dashboard
-                                    </a></li>
+                                @if (auth()->user()->hasRole('admin') || auth()->user()->hasRole('staff'))
+                                    <li class="{{request()->is('admin.dashboard') ? 'active' : ''}}"><a
+                                            href="{{route('admin.dashboard')}}">Dashboard
+                                        </a></li>
+
+                                @else
+                                    <li class="{{request()->is('dashboard') ? 'active' : ''}}"><a
+                                            href="{{route('dashboard')}}">Dashboard
+                                        </a></li>
+                                @endif
                                 <li class="has-children">
                                     <a href="">{{ Auth::user()->name }}</a>
                                     <ul class="dropdown">

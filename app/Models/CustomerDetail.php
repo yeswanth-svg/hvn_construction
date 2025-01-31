@@ -51,8 +51,9 @@ class CustomerDetail extends Model
 
     public function payments()
     {
-        return $this->hasMany(PaymentDetail::class, 'customer_id');
+        return $this->hasMany(PaymentDetail::class, 'customer_id', 'id');
     }
+
 
 
 

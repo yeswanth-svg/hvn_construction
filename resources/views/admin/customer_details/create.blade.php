@@ -36,119 +36,133 @@
                         <form method="POST" action="{{ route('admin.customer-details.store') }}"
                             enctype="multipart/form-data" class="form-group">
                             @csrf
-                            <div class="mb-3">
-                                <label for="project_name" class="form-label fs-5 fw-bold text-secondary">Project
-                                    Name</label>
-                                <select name="project_id" id="project_id" class="form-select" required>
-                                    <option value="">Select Project</option>
-                                    @foreach($projects as $project)
-                                        <option value="{{$project->id }}">{{ $project->project_name }}</option>
-                                    @endforeach
-                                </select>
+                            <div class="row">
+                                <!-- First Column -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="project_name" class="form-label fs-5 fw-bold text-secondary">Project
+                                            Name</label>
+                                        <select name="project_id" id="project_id" class="form-select" required>
+                                            <option value="">Select Project</option>
+                                            @foreach($projects as $project)
+                                                <option value="{{ $project->id }}">{{ $project->project_name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="plot_no" class="form-label fs-5 fw-bold text-secondary">Plot
+                                            No</label>
+                                        @if($plots->isEmpty())
+                                            <p class="text-danger fw-bold">No plots are available</p>
+                                        @else
+                                            <select name="plot_no" id="plot_no" class="form-select" required>
+                                                <option value="">Select Plot No</option>
+                                                @foreach($plots as $plot)
+                                                    <option value="{{ $plot->plot_no }}">{{ $plot->plot_no }}</option>
+                                                @endforeach
+                                            </select>
+                                        @endif
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="customer_name"
+                                            class="form-label fs-5 fw-bold text-secondary">Customer Name</label>
+                                        <input type="text" name="customer_name" id="customer_name" class="form-control"
+                                            required value="{{ old('customer_name') }}"
+                                            placeholder="Enter Customer Name">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="phone_number" class="form-label fs-5 fw-bold text-secondary">Phone
+                                            Number</label>
+                                        <input type="number" name="phone_number" id="phone_number" class="form-control"
+                                            required value="{{ old('phone_number') }}" placeholder="Enter Phone Number">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="pan_no" class="form-label fs-5 fw-bold text-secondary">PAN
+                                            NO</label>
+                                        <input type="text" name="pan_no" id="pan_no" class="form-control" required
+                                            value="{{ old('pan_no') }}" placeholder="Enter PAN NO">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="aadhaar_no" class="form-label fs-5 fw-bold text-secondary">AADHAR
+                                            NO</label>
+                                        <input type="number" name="aadhaar_no" id="aadhaar_no" class="form-control"
+                                            value="{{ old('aadhaar_no') }}" placeholder="Enter AADHAR No">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="address"
+                                            class="form-label fs-5 fw-bold text-secondary">Address</label>
+                                        <input type="text" name="address" id="address" class="form-control" required
+                                            value="{{ old('address') }}" placeholder="Enter Address">
+                                    </div>
+                                </div>
+
+                                <!-- Second Column -->
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="market_value_per_sqyd"
+                                            class="form-label fs-5 fw-bold text-secondary">Market Value</label>
+                                        <input type="number" name="market_value_per_sqyd" id="market_value_per_sqyd"
+                                            class="form-control" required value="{{ old('market_value_per_sqyd') }}"
+                                            placeholder="Enter Market Value" step="0.1">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="price_per_sqyd"
+                                            class="form-label fs-5 fw-bold text-secondary">Price/Sqyd</label>
+                                        <input type="number" name="price_per_sqyd" id="price_per_sqyd"
+                                            class="form-control" value="{{ old('price_per_sqyd') }}"
+                                            placeholder="Enter Price per Sqyd" step="0.1">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="price_per_cent"
+                                            class="form-label fs-5 fw-bold text-secondary">Price/Cent</label>
+                                        <input type="number" name="price_per_cent" id="price_per_cent"
+                                            class="form-control" value="{{ old('price_per_cent') }}"
+                                            placeholder="Price per Cent" readonly>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="total_plot_value"
+                                            class="form-label fs-5 fw-bold text-secondary">Total Plot Value</label>
+                                        <input type="number" name="total_plot_value" id="total_plot_value"
+                                            class="form-control" value="{{ old('total_plot_value') }}"
+                                            placeholder="Total Plot Value" readonly>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="total_market_value"
+                                            class="form-label fs-5 fw-bold text-secondary">Total Market Value</label>
+                                        <input type="number" name="total_market_value" id="total_market_value"
+                                            class="form-control" value="{{ old('total_market_value') }}"
+                                            placeholder="Total Market Value" readonly>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="status"
+                                            class="form-label fs-5 fw-bold text-secondary">Status</label>
+                                        <select name="status" id="status" class="form-select" required>
+                                            <option value="">Select Status</option>
+                                            <option value="Booked">Booked</option>
+                                            <option value="Registered">Registered</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="mb-3">
-                                <label for="project_name" class="form-label fs-5 fw-bold text-secondary">Plot No
-                                </label>
-                                <select name="plot_no" id="plot_no" class="form-select" required>
-                                    <option value="">Select Plot No</option>
-                                    @foreach($plots as $plot)
-                                        <option value="{{$plot->plot_no }}">{{ $plot->plot_no }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="customer_name" class="form-label fs-5 fw-bold text-secondary">Customer
-                                    Name</label>
-                                <input type="text" name="customer_name" id="customer_name" class="form-control" required
-                                    value="{{old('customer_name')}}" placeholder="Enter Customer Name">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="phone_number" class="form-label fs-5 fw-bold text-secondary">Phone Number
-                                </label>
-                                <input type="number" name="phone_number" id="phone_number" class="form-control" required
-                                    value="{{old('phone_number')}}" placeholder="Enter Phone Number">
-                            </div>
-
-                            <div class=" mb-3">
-                                <label for="pan_no" class="form-label fs-5 fw-bold text-secondary">PAN NO
-                                </label>
-                                <input type="string" name="pan_no" id="pan_no" class="form-control" required
-                                    value="{{old('pan_no')}}" placeholder="Enter PAN NO">
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label for="aadhaar_no" class="form-label fs-5 fw-bold text-secondary">AADHAR NO
-                                </label>
-                                <input type="number" name="aadhaar_no" id="aadhaar_no" class="form-control"
-                                    value="{{old('aadhaar_no')}}" placeholder="Enter AADHAR No">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="address" class="form-label fs-5 fw-bold text-secondary">Address
-                                </label>
-                                <input type="string" name="address" id="address" class="form-control" required
-                                    value="{{old('address')}}" placeholder="Enter Address">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="market_value_per_sqyd" class="form-label fs-5 fw-bold text-secondary">Market
-                                    Value
-                                </label>
-                                <input type="number" name="market_value_per_sqyd" id="market_value_per_sqyd"
-                                    class="form-control" required value="{{old('market_value_per_sqyd')}}"
-                                    placeholder="Enter Market Value" step="0.1">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="price_per_sqyd" class="form-label fs-5 fw-bold text-secondary">Price/Sqyd
-                                </label>
-                                <input type="number" name="price_per_sqyd" id="price_per_sqyd" class="form-control"
-                                    value="{{old('price_per_sqyd')}}" placeholder="Enter Price per Sqyd" step="0.1">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="price_per_cent" class="form-label fs-5 fw-bold text-secondary">Price/Cent
-                                </label>
-                                <input type="number" name="price_per_cent" id="price_per_cent" class="form-control"
-                                    value="{{old('price_per_cent')}}" placeholder="Price per Cent" readonly>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="total_plot_value" class="form-label fs-5 fw-bold text-secondary">Total Plot
-                                    Value
-                                </label>
-                                <input type="number" name="total_plot_value" id="total_plot_value" class="form-control"
-                                    value="{{old('total_plot_value')}}" placeholder="Total Plot Value" readonly>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="total_market_value" class="form-label fs-5 fw-bold text-secondary">Total
-                                    Market Value
-                                </label>
-                                <input type="number" name="total_market_value" id="total_market_value"
-                                    class="form-control" value="{{old('total_market_value')}}"
-                                    placeholder="Total Market Value" readonly>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="status" class="form-label fs-5 fw-bold text-secondary">Status
-                                </label>
-                                <select name="status" id="status" class="form-select" required>
-                                    <option value="">Select Status</option>
-                                    <option value="Booked">Booked</option>
-                                    <option value="Registered">Registered</option>
-                                </select>
-                            </div>
                             <!-- Submit Button -->
-                            <div class="mt-4">
+                            <div class="mt-4 text-center">
                                 <button type="submit" class="btn btn-primary">Save</button>
                             </div>
                         </form>
                     </div>
+
                 </div>
             </div>
         </div>

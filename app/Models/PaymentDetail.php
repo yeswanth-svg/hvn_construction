@@ -28,7 +28,7 @@ class PaymentDetail extends Model
 
     public function customer()
     {
-        return $this->belongsTo(CustomerDetail::class, 'customer_id');
+        return $this->belongsTo(CustomerDetail::class, 'customer_id', 'id');
     }
 
     public function companyAccount()

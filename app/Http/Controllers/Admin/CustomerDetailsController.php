@@ -26,9 +26,15 @@ class CustomerDetailsController extends Controller
      */
     public function create()
     {
-        //
+        // Get plot numbers that are already booked or registered
+        $reservedPlots = CustomerDetail::whereIn('status', ['booked', 'registered'])->pluck('plot_no');
+
+        // Get all plots except the reserved ones
+        $plots = EPI::whereNotIn('plot_no', $reservedPlots)->get();
+
+        // Fetch projects
         $projects = ProjectInformation::all();
-        $plots = EPI::all();
+
         return view('admin.customer_details.create', compact('projects', 'plots'));
     }
 

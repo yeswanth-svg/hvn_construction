@@ -226,7 +226,7 @@
 
                 // Update the form action with the correct ID
                 const form = modal.querySelector('form');
-                form.action = `/admin/roles/${id}`; // Adjust this URL to match your route
+                form.action = `/roles/${id}`; // Adjust this URL to match your route
             });
         });
     });

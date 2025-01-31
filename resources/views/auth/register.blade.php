@@ -22,7 +22,9 @@
 </div>
 
 <section class="py-4 d-flex justify-content-center">
-    <div class="card shadow-sm p-4 w-50">
+    <div class="card shadow-sm p-4 col-lg-5" style="
+    max-width: 100%;
+">
         <header class="text-center">
             <h2 class="h4 text-primary">Register</h2>
             <p class="text-muted">Create a new account to access all features.</p>
